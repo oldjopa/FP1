@@ -1,0 +1,7 @@
+// .editorconfig file
+root = true
+
+[*.fs]
+fsharp_max_array_or_list_width = 400
+fsharp_max_array_or_list_number_of_items = 40
+fsharp_array_or_list_multiline_formatter = character_width
