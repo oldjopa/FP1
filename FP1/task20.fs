@@ -27,10 +27,3 @@ let task20RecursionSolution n =
             int (n % 10I) + sumOfDigits (n / bigint 10)
 
     factorial n |> sumOfDigits
-
-
-
-// [<EntryPoint>]
-// let main (argv : string[]) =
-//     printfn "Сумма цифр в числе 100! (модульное решение) = %d" (factorial 100 |> sumOfDigits)
-//     0

@@ -94,10 +94,3 @@ let task11Loop grid =
         |> List.max
 
     getMaxProduct grid
-
-
-
-// [<EntryPoint>]
-// let main (argv: string[]) =
-//     printfn "max product = %d" (getMaxProduct arr)
-//     0
