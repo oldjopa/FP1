@@ -13,5 +13,6 @@ let main (argv: string array) =
     printfn "Задача 20"
     printfn "Сумма цифр 100! (module) = %d" (task20ModuleSolution 100)
     printfn "Сумма цифр 100! (recursion) = %d" (task20RecursionSolution 100)
+    printfn "Сумма цифр 100! (sequence) = %d" (task20SequenceSolution 100)
 
     0

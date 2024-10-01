@@ -27,3 +27,17 @@ let task20RecursionSolution n =
             int (n % 10I) + sumOfDigits (n / bigint 10)
 
     factorial n |> sumOfDigits
+
+
+// решение через seq
+let task20SequenceSolution n =
+    let factorial (n: int) =
+        let bigN = bigint n
+        seq { 1I .. bigN } |> Seq.scan (*) 1I |> Seq.last
+
+    let rec sumOfDigits (n: bigint) : int =
+        match n with
+        | n when n < 10I -> int n
+        | _ -> int (n % 10I) + sumOfDigits (n / bigint 10)
+
+    factorial n |> sumOfDigits
