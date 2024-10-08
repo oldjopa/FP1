@@ -6,9 +6,10 @@ open task20
 [<EntryPoint>]
 let main (argv: string array) =
 
-    printf "Задача 11"
+    printfn "Задача 11"
     printfn "Максимальное произведение 4х чисел в одном направлении (map) = %d" (task11Loop grid)
     printfn "Максимальное произведение 4х чисел в одном направлении (recursion) = %d" (task11Rec grid)
+    printfn "Максимальное произведение 4х чисел в одном направлении (красиво) = %d" (task11BeautifullSolution grid)
 
     printfn "Задача 20"
     printfn "Сумма цифр 100! (module) = %d" (task20ModuleSolution 100)

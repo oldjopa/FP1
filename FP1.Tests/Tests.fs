@@ -28,3 +28,8 @@ let ``task11Loop should find maximum prod of 4 numbers in the same direction`` (
 let ``task11Rec should find maximum prod of 4 numbers in the same direction`` () =
     let result = task11Rec grid
     Assert.Equal(70600674, result)
+
+[<Fact>]
+let ``task11BeautifullSolution should find maximum prod of 4 numbers in the same direction`` () =
+    let result = task11BeautifullSolution grid
+    Assert.Equal(51267216, result)
