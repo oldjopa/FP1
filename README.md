@@ -191,3 +191,34 @@ print(res)
 Неприятной особенностью языка оказалась автоматическое приведение типов. В компилируемом языке от этого не сильно много смысла и чаще удобнее прописать тип, чем после ловить ругательные сообщения от компилятора.
 
 Код на питоне выглядит приятнее и компактнее, возможно от того что я с ним знаком дольше чем с F#, но это не точно)
+
+
+
+### Правки
+
+#### Более красивое решение задачи 11
+
+Учитываются только 2 направления - горизонталь и вертикаль
+
+```f#
+let task11BeautifullSolution (grid: int list list) =
+    let n = List.length grid
+
+    let getElement (grid: int list list) x y =
+        if x >= 0 && x < List.length grid && y >= 0 && y < List.length (List.head grid) then
+            List.item y (List.item x grid)
+        else
+            0
+
+    [ for a in 0 .. (n - 5) do
+          for b in 0 .. (n - 1) do
+              yield (a, b) ]
+    |> List.map (fun (x, y) ->
+        [ for i in 0..3 do
+              yield getElement grid y (x + i), getElement grid (y + i) (x) ])
+    |> List.map (fun (x) ->
+        x
+        |> List.fold (fun (acc1: int, acc2: int) (x: int, y: int) -> (acc1 * x, acc2 * y)) (1, 1))
+    |> List.map (fun (p1, p2) -> max p1 p2)
+    |> List.max
+```
