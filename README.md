@@ -218,7 +218,7 @@ let task11BeautifullSolution (grid: int list list) =
               yield getElement grid y (x + i), getElement grid (y + i) (x) ])
     |> List.map (fun (x) ->
         x
-        |> List.fold (fun (acc1: int, acc2: int) (x: int, y: int) -> (acc1 * x, acc2 * y)) (1, 1))
+        |> List.fold (fun (acc1, acc2) (x, y) -> (acc1 * x, acc2 * y)) (1, 1))
     |> List.map (fun (p1, p2) -> max p1 p2)
     |> List.max
 ```
